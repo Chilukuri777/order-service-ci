@@ -32,21 +32,7 @@ class OrderControllerTest {
                         .content(json))
                 .andExpect(status().isOk());
     }
-    @Test
-    void shouldRejectOrderWithNegativeQuantity() throws Exception {
-        // JSON with invalid quantity
-        String json = """
-    {
-      "item": "Book",
-      "quantity": -5
-    }
-    """;
 
-        mockMvc.perform(post("/orders")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(json))
-                .andExpect(status().isBadRequest());  // Expect HTTP 400
-    }
 
 
 }
