@@ -18,10 +18,11 @@ public class OrderController {
     private final OrderRepository repo;
 
 
-    @PostMapping("/orders")
+    @PostMapping
     public ResponseEntity<String> createOrder(@Valid @RequestBody Order request) {
         return ResponseEntity.ok("Order accepted");
     }
+
 
     @GetMapping
     public List<Order> getAll(){
